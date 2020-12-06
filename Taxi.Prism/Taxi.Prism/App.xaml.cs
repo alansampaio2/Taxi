@@ -5,6 +5,7 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Forms;
 using Taxi.Prism.Views;
 using Taxi.Prism.ViewModels;
+using Taxi.Common.Services;
 
 namespace Taxi.Prism
 {
@@ -26,6 +27,7 @@ namespace Taxi.Prism
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
+            containerRegistry.Register<IGeolocatorService, GeolocatorService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<TaxiMasterDetailPage, TaxiMasterDetailPageViewModel>();
